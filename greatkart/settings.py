@@ -15,6 +15,11 @@ from pathlib import Path
 import os
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -71,6 +76,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',
                 'carts.context_processors.counter',
+               
             ],
         },
     },
@@ -135,6 +141,22 @@ STATICFILES_DIRS = [
 # Media files configuration
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
+
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
+
+
+# SMTP configuration
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'johnny.louis1@yahoo.com'
+EMAIL_HOST_PASSWORD = 'Johvanny2016@$'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
