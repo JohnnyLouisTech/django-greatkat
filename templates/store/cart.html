@@ -3,6 +3,8 @@
 
 {% block content %}
 
+<section class="section-content padding-y bg">
+	<div class="container">
 <!-- ============================ COMPONENT 1 ================================= -->
 {% if not cart_items %}
 <!-- Message goes here-->
@@ -12,10 +14,9 @@
 		<a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
 	
 	</div>
-	<br>
 {% else %}
 <div class="row">
-	<aside class="col-lg-9">
+	<aside class="col-lg-8">
 <div class="card">
 <table class="table table-borderless table-shopping-cart">
 <thead class="text-muted">
@@ -82,7 +83,7 @@
 </div> <!-- card.// -->
 
 	</aside> <!-- col.// -->
-	<aside class="col-lg-3">
+	<aside class="col-lg-4">
 
 		<div class="card">
 		<div class="card-body">
